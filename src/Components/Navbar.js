@@ -5,8 +5,8 @@ export const Navbar = () => {
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <a className="navbar-brand" href="#">
-          BadBank
+        <a className="navbar-brand" href="#/Home/">
+          <Link to="/">BadBank</Link>
         </a>
         <button
           className="navbar-toggler"
@@ -19,36 +19,29 @@ export const Navbar = () => {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
+        <div
+          className="collapse navbar-collapse justify-content-end"
+          id="navbarNav"
+        >
           <ul className="navbar-nav">
             <li className="nav-item">
               <a className="nav-link" href="#/CreateAccount/">
-                Create Account
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#/login/">
-                Login
+                <Link to="create-account">Create Account</Link>
               </a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#/deposit/">
-                Deposit
+                <Link to="deposit">Deposit</Link>
               </a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#/withdraw/">
-                Withdraw
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#/balance/">
-                Balance
+                <Link to="withdraw">Withdraw</Link>
               </a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#/alldata/">
-                AllData
+                <Link to="all-data">AllData</Link>
               </a>
             </li>
           </ul>
