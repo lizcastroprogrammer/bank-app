@@ -1,20 +1,18 @@
 import React, { useState } from "react";
-import ReactDOM from "react-dom";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import LocalError from "./error";
 
 const validationSearch = Yup.object().shape({
-  name: Yup.string().required("Required"),
-  email: Yup.string().required("Required"),
+  name: Yup.string().required("*Required"),
+  email: Yup.string().required("*Required"),
   password: Yup.string()
-    .min(8, "Needs to be at least 8 characters")
-    .required("Required"),
+    .min(8, "*Needs to be at least 8 characters")
+    .required("*Required"),
 });
 
 export const Create = () => {
   const [success, setSuccess] = useState(false);
-  const [error, setError] = useState();
 
   return (
     <div

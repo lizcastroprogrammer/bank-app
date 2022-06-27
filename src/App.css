@@ -52,3 +52,12 @@ a:hover {
   color: black;
   background-color: white;
 }
+
+input {
+  margin: 8px 10px 5px 2px;
+}
+
+button {
+  margin-top: 5px;
+  border-radius: 5px;
+}
