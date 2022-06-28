@@ -30,6 +30,33 @@ export const Create = () => {
           validationSchema={validationSearch}
           onSubmit={(values, { setSubmitting, resetForm }) => {
             alert("Account successfully created!");
+            if (localStorage.getItem("name") === null) {
+              localStorage.setItem("name", values.name);
+            } else {
+              localStorage.setItem(
+                "name",
+                localStorage.getItem("name") + "," + values.name
+              );
+            }
+            if (localStorage.getItem("email") === null) {
+              localStorage.setItem("email", values.email);
+            } else {
+              localStorage.setItem(
+                "email",
+                localStorage.getItem("email") + "," + values.email
+              );
+            }
+            if (localStorage.getItem("password") === null) {
+              localStorage.setItem("password", values.password);
+            } else {
+              localStorage.setItem(
+                "password",
+                localStorage.getItem("password") + "," + values.password
+              );
+            }
+            console.log("name: ", localStorage.getItem("name"));
+            console.log("email: ", localStorage.getItem("email"));
+            console.log("password: ", localStorage.getItem("password"));
             setSubmitting(true);
             setSuccess(true);
             resetForm();

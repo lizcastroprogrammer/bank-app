@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 export const Navbar = () => {
+  const [page, setPage] = useState("Home");
+
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -25,22 +27,38 @@ export const Navbar = () => {
         >
           <ul className="navbar-nav">
             <li className="nav-item">
-              <a className="nav-link" href="#/CreateAccount/">
+              <a
+                className={`nav-link${page === "Create" ? " active" : ""}`}
+                href="#/CreateAccount/"
+                onClick={() => setPage("Create")}
+              >
                 <Link to="create-account">Create Account</Link>
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#/deposit/">
+              <a
+                className={`nav-link${page === "Deposit" ? " active" : ""}`}
+                href="#/deposit/"
+                onClick={() => setPage("Deposit")}
+              >
                 <Link to="deposit">Deposit</Link>
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#/withdraw/">
+              <a
+                className={`nav-link${page === "Withdraw" ? " active" : ""}`}
+                href="#/withdraw/"
+                onClick={() => setPage("Withdraw")}
+              >
                 <Link to="withdraw">Withdraw</Link>
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#/alldata/">
+              <a
+                className={`nav-link${page === "AllData" ? " active" : ""}`}
+                href="#/alldata/"
+                onClick={() => setPage("AllData")}
+              >
                 <Link to="all-data">AllData</Link>
               </a>
             </li>
